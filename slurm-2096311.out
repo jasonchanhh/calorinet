@@ -1,0 +1,33 @@
+/tmp/slurmd/job2096311/slurm_script: line 5: $'\302#SBATCH': command not found
+Collecting keras
+  Downloading https://files.pythonhosted.org/packages/5e/10/aa32dad071ce52b5502266b5c659451cfd6ffcbf14e6c8c4f16c0ff5aaab/Keras-2.2.4-py2.py3-none-any.whl (312kB)
+Requirement already satisfied: scipy>=0.14 in /mnt/storage/easybuild/software/Python/2.7.12-foss-2016b/lib/python2.7/site-packages (from keras)
+Collecting keras-preprocessing>=1.0.5 (from keras)
+  Downloading https://files.pythonhosted.org/packages/c0/bf/0315ef6a9fd3fc2346e85b0ff1f5f83ca17073f2c31ac719ab2e4da0d4a3/Keras_Preprocessing-1.0.9-py2.py3-none-any.whl (59kB)
+Requirement already satisfied: numpy>=1.9.1 in /mnt/storage/easybuild/software/Python/2.7.12-foss-2016b/lib/python2.7/site-packages/numpy-1.11.1-py2.7-linux-x86_64.egg (from keras)
+Requirement already satisfied: six>=1.9.0 in /mnt/storage/easybuild/software/Python/2.7.12-foss-2016b/lib/python2.7/site-packages/six-1.10.0-py2.7.egg (from keras)
+Collecting pyyaml (from keras)
+  Downloading https://files.pythonhosted.org/packages/9f/2c/9417b5c774792634834e730932745bc09a7d36754ca00acf1ccd1ac2594d/PyYAML-5.1.tar.gz (274kB)
+Collecting h5py (from keras)
+  Downloading https://files.pythonhosted.org/packages/53/08/27e4e9a369321862ffdce80ff1770553e9daec65d98befb2e14e7478b698/h5py-2.9.0-cp27-cp27mu-manylinux1_x86_64.whl (2.8MB)
+Collecting keras-applications>=1.0.6 (from keras)
+  Downloading https://files.pythonhosted.org/packages/90/85/64c82949765cfb246bbdaf5aca2d55f400f792655927a017710a78445def/Keras_Applications-1.0.7-py2.py3-none-any.whl (51kB)
+Building wheels for collected packages: pyyaml
+  Running setup.py bdist_wheel for pyyaml: started
+  Running setup.py bdist_wheel for pyyaml: finished with status 'done'
+  Stored in directory: /mnt/storage/home/jc15502/.cache/pip/wheels/ad/56/bc/1522f864feb2a358ea6f1a92b4798d69ac783a28e80567a18b
+Successfully built pyyaml
+Installing collected packages: keras-preprocessing, pyyaml, h5py, keras-applications, keras
+Successfully installed h5py-2.9.0 keras-2.2.4 keras-applications-1.0.7 keras-preprocessing-1.0.9 pyyaml-5.1
+You are using pip version 9.0.1, however version 19.1.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+Requirement already satisfied: h5py in /mnt/storage/home/jc15502/.local/lib/python2.7/site-packages
+Requirement already satisfied: six in /mnt/storage/easybuild/software/Python/2.7.12-foss-2016b/lib/python2.7/site-packages/six-1.10.0-py2.7.egg (from h5py)
+Requirement already satisfied: numpy>=1.7 in /mnt/storage/easybuild/software/Python/2.7.12-foss-2016b/lib/python2.7/site-packages/numpy-1.11.1-py2.7-linux-x86_64.egg (from h5py)
+You are using pip version 9.0.1, however version 19.1.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+/tmp/slurmd/job2096311/slurm_script: line 16: cd: CaloriNet: No such file or directory
+Using TensorFlow backend.
+slurmstepd: error: Job 2096311 exceeded memory limit (2512912 > 1024000), being killed
+slurmstepd: error: Exceeded job memory limit
+slurmstepd: error: *** JOB 2096311 ON gpu01 CANCELLED AT 2019-05-13T16:40:57 ***
