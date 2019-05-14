@@ -59,6 +59,7 @@ xv_train = np.moveaxis(xv_train, 1, 3).astype('float32')/255
 xv_test = np.moveaxis(xv_test, 1, 3).astype('float32')/255
 xa_train = xa_train.astype('float32')/9.81
 xa_test = xa_test.astype('float32')/9.81
+print("reshaped into keras")
 
 # Replace missing data with random sampling from same label
 nan_train = np.logical_or(np.isnan(ya_train), np.isnan(yv_train))
@@ -99,6 +100,7 @@ nan_test = np.logical_or(np.isnan(ya_test), np.isnan(yv_test))
 xv_test = np.delete(xv_test, np.where(nan_test), 0)
 xa_test = np.delete(xa_test, np.where(nan_test), 0)
 y_test = np.delete(yv_test, np.where(nan_test))
+print("nan data removed")
 
 # Network
 model = NetworkCombined(img_rows, img_cols, Nv_chan, acc_buffersiz, Na_chan)
