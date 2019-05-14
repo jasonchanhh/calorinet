@@ -25,12 +25,12 @@ np.random.seed(10)
 batch_size = 128
 epochs = 1000
 
-save_dir = r'/saved_models'
+save_dir = r'/mnt/storage/scratch/jc15502/saved_models'
 
 # Load video and accelerometer data
-(xv_train, yv_train, lab_train) = CaloriesDataset.load_range_N(TRAINSUBJ, Set['buf_siz'], r'/calories_data')
+(xv_train, yv_train, lab_train) = CaloriesDataset.load_range_N(TRAINSUBJ, Set['buf_siz'], r'/mnt/storage/scratch/jc15502/calories_data')
 (xa_train, ya_train, _) = CaloriesDataset.load_acc_range(TRAINSUBJ)
-(xv_test, yv_test, lab_test) = CaloriesDataset.load_range_N(TESTSUBJ, Set['buf_siz'], r'/calories_data')
+(xv_test, yv_test, lab_test) = CaloriesDataset.load_range_N(TESTSUBJ, Set['buf_siz'], r'/mnt/storage/scratch/jc15502/calories_data')
 (xa_test, ya_test, _) = CaloriesDataset.load_acc_range(TESTSUBJ)
 
 # Gravity filter
@@ -38,7 +38,7 @@ import scipy.signal
 for i in range(xa_test.shape[0]):
     for c in range(6):
         xa_test[i,:,c] -= scipy.signal.wiener(xa_test[i,:,c], 30)
-        
+
 for i in range(xa_train.shape[0]):
     for c in range(6):
         xa_train[i,:,c] -= scipy.signal.wiener(xa_train[i,:,c], 30)
@@ -162,7 +162,7 @@ class MySequence(keras.utils.Sequence):
                                      batch_size=self.batch_size,
                                      shuffle=False)
         batch_xv_aug, batch_y_aug = iterator.next()
-        
+
         batch_xa_aug = np.copy(batch_xa)
         # Randoly change the magnitude
         mag = np.random.normal(loc=1.0, scale=0.1)
@@ -173,7 +173,7 @@ class MySequence(keras.utils.Sequence):
         acc2 = np.random.permutation([3, 4, 5])
         batch_xa_aug[..., 0:3] = batch_xa_aug[..., acc1]
         batch_xa_aug[..., 3:6] = batch_xa_aug[..., acc2]
-        
+
         return [batch_xv_aug, batch_xa_aug], batch_y
 
 my_generator = MySequence(xv_train, xa_train, y_train,
