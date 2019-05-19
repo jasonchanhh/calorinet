@@ -12,5 +12,6 @@ module add libs/tensorflow/1.2
 pip install --user keras
 pip install --user h5py
 
-cd calories
+cd ~/CaloriNet
+echo $PWD
 python CaloriNet_leave_10_out.py

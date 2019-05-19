@@ -52,7 +52,7 @@ for i in subjects:
     
     # Modify sh script
     content_sh[2] = content_sh[2].replace('SCRIPTNAME',net_name)
-    content_sh[15] = content_sh[15].replace('SCRIPTNAME',out_py)
+    content_sh[16] = content_sh[16].replace('SCRIPTNAME',out_py)
     
     # Flush content in file
     fdest_py.writelines(content_py)

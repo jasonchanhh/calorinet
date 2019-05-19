@@ -1,11 +1,11 @@
 #!/bin/bash
 
 #SBATCH --job-name=CaloriNet_leave_1_out
-#SBATCH --partition=gpu_veryshort
+#SBATCH --partition=gpu
 #SBATCH --gres=gpu:1
-#SBATCH --time=1:00:00
-#SBATCH --mail-type=FAIL
+#SBATCH --time=24:00:00
 #SBATCH --mem=64G
+#SBATCH --mail-type=FAIL
 
 module add Python/2.7.12-foss-2016b
 module add libs/tensorflow/1.2

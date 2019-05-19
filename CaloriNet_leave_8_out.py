@@ -25,12 +25,12 @@ np.random.seed(10)
 batch_size = 128
 epochs = 1000
 
-save_dir = r'/saved_models'
+save_dir = r'/mnt/storage/scratch/jc15502/saved_models'
 
 # Load video and accelerometer data
-(xv_train, yv_train, lab_train) = CaloriesDataset.load_range_N((9,10,1,2,3,4,5,6,7), Set['buf_siz'], r'/calories_data')
+(xv_train, yv_train, lab_train) = CaloriesDataset.load_range_N((9,10,1,2,3,4,5,6,7), Set['buf_siz'], r'/mnt/storage/scratch/jc15502/calories_data')
 (xa_train, ya_train, _) = CaloriesDataset.load_acc_range((9,10,1,2,3,4,5,6,7))
-(xv_test, yv_test, lab_test) = CaloriesDataset.load_range_N((8,), Set['buf_siz'], r'/calories_data')
+(xv_test, yv_test, lab_test) = CaloriesDataset.load_range_N((8,), Set['buf_siz'], r'/mnt/storage/scratch/jc15502/calories_data')
 (xa_test, ya_test, _) = CaloriesDataset.load_acc_range((8,))
 
 # Gravity filter
